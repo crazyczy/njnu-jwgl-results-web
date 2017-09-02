@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^login$', login_view, name='login_view'),
     url(r'^logout$', logout_view, name='logout_view'),
     url(r'^password$', password, name='password'),
+    url(r'^realtime$', realtime, name='realtime'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

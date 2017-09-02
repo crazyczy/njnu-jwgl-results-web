@@ -38,3 +38,17 @@ def password(request):
         u.save()
         return redirect('/')
     return render(request, 'password.html', locals())
+
+@login_required
+def realtime(request):
+    if request.method == 'POST':
+        idno = request.POST['idno']
+        imageurl = 'http://223.2.10.123/jwgl/photos/rx20' + idno[2:4] + '/' + idno + '.jpg'
+        result = getscore.getScorebyid(idno)
+        if result:
+            info = result[0]
+            scores = result[1]
+        else:
+            info = ''
+            scores = ''
+    return render(request, 'realtime.html', locals())
