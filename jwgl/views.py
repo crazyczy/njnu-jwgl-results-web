@@ -5,6 +5,9 @@ from collections import OrderedDict
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from . import getscore
+
 
 @login_required
 def index(request):
@@ -25,3 +28,13 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('/login')
+
+@login_required
+def password(request):
+    if request.method == 'POST':
+        password = request.POST['password']
+        u = User.objects.get(username = request.user.username)
+        u.set_password(password)
+        u.save()
+        return redirect('/')
+    return render(request, 'password.html', locals())
