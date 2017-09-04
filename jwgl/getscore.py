@@ -116,13 +116,15 @@ def getScorebyid(id):
     password = account.pwd
     status = getStatus(username, password, yzm)
 
-    # 验证码错误
-    while(status['status'] == '401'):
-        yzm = Verify()
-        status = getStatus(username, password, yzm)
+    while status['status'] != '200':
+
+        # 验证码错误
+        if status['status'] == '401':
+            yzm = Verify()
+            status = getStatus(username, password, yzm)
 
         # 密码错误
-        while(status['status'] == '402'):
+        if status['status'] == '402':
             Account.objects.filter(idnum = username).delete()
             account = Account.objects.order_by('?')[0]
             username = account.idnum
