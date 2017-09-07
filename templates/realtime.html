@@ -214,17 +214,24 @@ jQuery(function($) {
 
     $.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
 
-    new $.fn.dataTable.Buttons( myTable, {
+    new $.fn.dataTable.Buttons(myTable, {
         buttons: [
           {
             "extend": "csv",
-            "text": "<i class='ace-icon fa fa-download blue'></i",
+            "text": "<i class='ace-icon fa fa-download blue'></i><span class='hidden'>导出</span>",
             "className": "btn btn-white btn-primary btn-bold",
             "title": '{{idno}}'
           }
         ]
     } );
     myTable.buttons().container().appendTo( $('.tableTools-container') );
+
+    $($('.tableTools-container')).find('a.dt-button').each(function() {
+        $(this).tooltip({
+            container: 'body',
+            title: $(this).text()
+        });
+    });
 
 })
 </script>

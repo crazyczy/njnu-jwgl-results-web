@@ -5,10 +5,10 @@
 目前只做了原来毕设里面有的那个功能就是按学号实时查询教务系统成绩，查询结果支持搜索，排序以及导出，后面有时间的话再考虑做个可视化分析以及做成API等等。
 
 ## 登录
-![](https://i.imgur.com/Q7poVsf.png)
+![](https://i.imgur.com/9ojG7Tz.png)
 
 ## 实时查询
-![](https://i.imgur.com/vPi8Jnq.png)
+![](https://i.imgur.com/ddHum1Y.png)
 
 项目主要环境:
 
@@ -18,7 +18,6 @@
 * python=3.5.4
 * requests=2.14.2
 * sqlite=3.13.0
-* pip:
-	* 	beautifulsoup4==4.6.0
-	* 	bs4==0.0.1
-	*    pytesseract==0.1.7
+* beautifulsoup4==4.6.0
+* bs4==0.0.1
+* pytesseract==0.1.7
