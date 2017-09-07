@@ -12,12 +12,13 @@
 
 项目主要环境:
 
-* django=1.11.3
-* pillow=4.2.1
-* pip=9.0.1
-* python=3.5.4
-* requests=2.14.2
-* sqlite=3.13.0
-* beautifulsoup4==4.6.0
-* bs4==0.0.1
-* pytesseract==0.1.7
+|模块|版本|
+|---|---|
+|django|1.11.3|
+|pillow|4.2.1|
+|pip|9.0.1|
+|python|3.5.4|
+|requests|2.14.2|
+|sqlite|3.13.0|
+|beautifulsoup4|4.6.0|
+|pytesseract|0.1.7|
