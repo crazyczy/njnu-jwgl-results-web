@@ -43,7 +43,7 @@ def password(request):
 def realtime(request):
     if request.method == 'POST':
         idno = request.POST['idno']
-        imageurl = 'http://223.2.10.123/jwgl/photos/rx20' + idno[2:4] + '/' + idno + '.jpg'
+        imageurl = '/img/jwgl/photos/rx20' + idno[2:4] + '/' + idno + '.jpg'
         result = getscore.getScorebyid(idno)
         if result:
             info = result[0]
